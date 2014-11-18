@@ -10,6 +10,7 @@ from actstream.compat import user_model_label
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+        orm[user_model_label]._meta.db_table = 'auth_user'
 
         # Adding model 'Follow'
         db.create_table('actstream_follow', (
